@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3-rd-party apps
     "rest_framework",
+    "corsheaders",
     # Local
     "accounts.apps.AccountsConfig",
     "posts.apps.PostsConfig",
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -130,3 +132,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+
+CORS_ORIGIN_WHITELIST = (
+    "http://locahost:3000",
+    "http://localhost:8000"
+)
+
+
+# It is a good idea to allow specific cross-domain requests
+# from our frontend by setting CSRF_TRUSTED_ORIGIN
+
+CSRF_TRUSTED_ORIGIN = ["http://localhost:3000"]  # 'React' app default port
