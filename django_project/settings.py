@@ -144,3 +144,12 @@ CORS_ORIGIN_WHITELIST = (
 # from our frontend by setting CSRF_TRUSTED_ORIGIN
 
 CSRF_TRUSTED_ORIGIN = ["http://localhost:3000"]  # 'React' app default port
+
+
+# Project-Level Permissions
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        # "rest_framework.permissions.AllowAny"
+        "rest_framework.permissions.IsAuthenticated"
+    ]
+}
