@@ -15,32 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from drf_spectacular.views import (
-    SpectacularAPIView,
-    SpectacularRedocView,
-    SpectacularSwaggerView,
-    SpectacularJSONAPIView,
-)
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api-auth/", include("rest_framework.urls")),
-    path("api/v1/auth/", include("dj_rest_auth.urls")),
-    path("api/v1/auth/register/", include("dj_rest_auth.registration.urls")),
-    path("api/v1/users/", include("accounts.urls")),
+    path("api/v1/docs/", include("docs.urls")),
+    path("api/v1/auth/", include("app_auth.urls")),
+    path("api/v1/users/", include("users.urls")),
     path("api/v1/posts/", include("posts.urls")),
-    path("api/v1/docs/", SpectacularAPIView.as_view(), name="docs"),
-    path(
-        "api/v1/docs/redoc", SpectacularRedocView.as_view(url_name="docs"), name="redoc"
-    ),
-    path(
-        "api/v1/docs/swagger",
-        SpectacularSwaggerView.as_view(url_name="docs"),
-        name="swagger",
-    ),
-    path(
-        "api/v1/docs/json",
-        SpectacularJSONAPIView.as_view(),
-        name="docs_json",
-    ),
 ]

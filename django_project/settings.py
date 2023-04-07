@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "drf_spectacular",
     # Local
-    "accounts.apps.AccountsConfig",
+    "app_auth.apps.AuthConfig",
+    "docs.apps.DocsConfig",
+    "users.apps.UsersConfig",
     "posts.apps.PostsConfig",
 ]
 
@@ -140,7 +142,7 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-AUTH_USER_MODEL = "accounts.CustomUser"
+AUTH_USER_MODEL = "users.CustomUser"
 
 
 CORS_ORIGIN_WHITELIST = ("http://locahost:3000", "http://localhost:8000")

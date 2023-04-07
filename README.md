@@ -6,7 +6,7 @@ When you login to put the username not the email
 
 | Username         | Password           |
 | ---------------- | ------------------ |
-| admin            |                    |
+| admin            | 123456             |
 | alex             | Password123#       |
 | marwa            | Password123#       |
 

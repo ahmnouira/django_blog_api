@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Post
-from accounts.serializers import UserListSerializer
+from users.serializers import UserListSerializer
 
 
 # The serializer not only transforms data into JSON
