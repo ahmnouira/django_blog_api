@@ -38,11 +38,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # django-allauth uses the sites framework
+    "django.contrib.sites",
     # 3-rd-party apps
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
     "dj_rest_auth",
+    "dj_rest_auth.registration",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
     # Local
     "accounts.apps.AccountsConfig",
     "posts.apps.PostsConfig",
@@ -157,3 +163,14 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
     ],
 }
+
+
+# The email backend config is needed since by default an email will be sent
+# when a new user is registered.
+# we will output the emails to the console
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
+# SITE_ID is part of the built-in Django "sites framework", which is way to host multiple
+# websites from the same Django project.
+SITE_ID = 1
