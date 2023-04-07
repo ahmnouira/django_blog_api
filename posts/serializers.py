@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Post
-from accounts.serializers import AuthorSerializer
+from accounts.serializers import UserListSerializer
 
 
 # The serializer not only transforms data into JSON
@@ -19,7 +19,7 @@ class PostListSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    author = AuthorSerializer()
+    author = UserListSerializer()
 
     class Meta:
         model = Post
