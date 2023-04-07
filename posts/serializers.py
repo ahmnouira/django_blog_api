@@ -10,7 +10,12 @@ from accounts.serializers import AuthorSerializer
 class PostListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ("id", "title", "body")
+        fields = (
+            "id",
+            "author",
+            "title",
+            "body",
+        )
 
 
 class PostSerializer(serializers.ModelSerializer):

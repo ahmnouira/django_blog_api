@@ -1,5 +1,9 @@
 # django_blog_api
 
+## Users
+
+When you login to put the username not the email
+
 | Email                   | Password         |
 | ----------------------- | ---------------- |
 | admin@admin.com         | 123456           |
