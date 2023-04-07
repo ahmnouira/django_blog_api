@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "drf_spectacular",
     # Local
     "accounts.apps.AccountsConfig",
     "posts.apps.PostsConfig",
@@ -162,6 +163,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 
@@ -174,3 +176,10 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # SITE_ID is part of the built-in Django "sites framework", which is way to host multiple
 # websites from the same Django project.
 SITE_ID = 1
+
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Blog API Django Project",
+    "DESCRIPTION": "A sample blog using Django Rest Framework",
+    "VERSION": "1.0.0",
+}

@@ -38,11 +38,11 @@ class UserSerializer(serializers.ModelSerializer):
         model = CustomUser
         fields = (
             "id",
-            "username",
             "name",
             "first_name",
             "last_name",
             # read_only_fields
+            "username",  # username is the email used for authentication
             "password",
             "last_login",
             "is_superuser",
