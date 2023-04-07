@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
+    "dj_rest_auth",
     # Local
     "accounts.apps.AccountsConfig",
     "posts.apps.PostsConfig",
